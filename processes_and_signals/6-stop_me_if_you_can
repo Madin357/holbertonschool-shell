@@ -2,7 +2,3 @@
 # Find PID of the process and force OOM killer to terminate it
 
 PID=$(pgrep -f 4-to_infinity_and_beyond)
-
-if [ -n "$PID" ]; then
-    echo 1000 > /proc/$PID/oom_score_adj
-fi
