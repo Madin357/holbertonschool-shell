@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # Display all processes for all users in a user-oriented format with hierarchy
-awk '{print $1, $9, $11, $12}'
+ps -eo user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command --forest
+
