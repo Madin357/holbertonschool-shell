@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-# Stops the 4-to_infinity_and_beyond process without using kill or killall
+# Find PID of the process and force OOM killer to terminate it
 
-pkill -f 4-to_infinity_and_beyond
+PID=$(pgrep -f 4-to_infinity_and_beyond)
 
+if [ -n "$PID" ]; then
+    echo 1000 > /proc/$PID/oom_score_adj
+fi
