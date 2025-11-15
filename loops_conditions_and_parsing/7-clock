@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
-# Bash script that displays Best School 10 times
 hour=0
 while [ $hour -le 12 ]; do
 minute=1
-echo "Hour:$hour"
-     while [ $minute -lt 60 ]; do
+echo "Hour: $hour"
+     while [ $minute -le 59 ]; do
               echo "$minute"
      minute=$((minute+1))
      done
 hour=$((hour+1))
-
 done
