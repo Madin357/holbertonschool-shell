@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Show PIDs of processes containing "bash"
+grep bash /proc/*/comm 2>/dev/null | awk -F'/' '{print $3, "bash"}'
+
