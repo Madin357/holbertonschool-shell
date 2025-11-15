@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# Comment here
 PID_FILE="/var/run/myscript.pid"
 
 # Create the PID file with our PID
