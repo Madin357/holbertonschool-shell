@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 # Groups Apache log data by IP and HTTP code with occurrence counts
 
-awk '{ print $1, $9 }' \
-    | sort \
-    | uniq -c \
-    | sort -nr \
-    | awk '{ printf "%8d %s %s\n", $1, $2, $3 }'
+awk '{ count[$1 " " $9]++ }
+     END {
+         for (key in count)
+             print count[key], key
+     }' /var/log/apache2/access.log \
+     | sort -nr
 
