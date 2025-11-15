@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Bash script that displays Best School 10 times
+count=1
+while [ $count -le 20 ]
+do
+if [ "$count" -eq 4 ]; then
+    echo "bad luck from China"
+elif [ "$count" -eq 8 ]; then
+    echo "bad luck from Japan"
+elif [ "$count" -eq 18 ]; then
+    echo "bad luck from Italy"
+else
+    echo "$count"
+fi
+count=$((count+1))
+done
