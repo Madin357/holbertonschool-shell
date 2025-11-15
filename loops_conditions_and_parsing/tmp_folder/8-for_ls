@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
-# This script displays filenames after the first dash
+# Display filenames but only keep the part after the first dash
 
-for file in *
+for f in *
 do
-    # Ignore files without a dash
-    if [[ "$file" == *-* ]]; then
-        echo "${file#*-}"
+    if [[ "$f" == *-* ]]; then
+        # Has a dash → remove the part before the first dash
+        echo "${f#*-}"
+    else
+        # No dash → print whole filename
+        echo "$f"
     fi
 done
 
